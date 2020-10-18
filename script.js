@@ -5,14 +5,31 @@ var generateBtn = document.querySelector("#generate");
 
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+var passwordText = document.querySelector("#password");
+        
+        passwordText.value = password;
 
   
-}
+  // create for loop to choose password characters 
+  
+    function writePassword() {
+
+        var z = ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()[]:;\/");
+        var password = ("") ;
+     
+    for (let i = 1; i <=10; i++) {
+        password = password + values.charAT (Math.floor(Math.random()* Math.floor (z.length) + 0)); 
+         
+      }
+
+      document.getElementById ("placeholder") . value = password;
+  
+      
+      
+      
+    }
+  
 
 // Add event listener to generate button  
 
@@ -56,88 +73,4 @@ function lowerCaseConfirm () {
 
 }
 
-
-
-
-
-
-//Prompts must be added to event listener upon button click 
-//multiple functions needed to generate random uppercase & lowercase letters
-//multiple funtions needed to generate random numebers and symbols
-//functions must be called for when button is clicked by user
-//must return string of characters
-//need whole numbers not decimals 
-//browser character set can incorporate symbols and numbers
-
-var lowerC; 
-
-lowerC = function getRandomLower() {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 97); 
-
-}
-
-
-var upperC;
-
-upperC = function getRandomUpper() {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 65); 
-
-}
-
-var ranNum; 
-
-ranNum = function getRandomNumber() {
-    return String.fromCharCode(Math.floor(Math.random() * 10) + 48); 
-
-}
-
-var ranSymb; 
-
-ramSymb = function getRandomSymbol() {
-    const symbols = "*&$#!@?/.,=+";
-    return symbols [Math.floor(Math.random() * symbols.length)]; 
-
-};
-
-
-
-// Individual Functions 
-
-function getRandomLower() {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 97); 
-
-}
-
-console.log(getRandomLower());
-
-function getRandomUpper() {
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 65); 
-
-}
-
-console.log(getRandomUpper());
-
-function getRandomNumber() {
-    return String.fromCharCode(Math.floor(Math.random() * 10) + 48); 
-
-}
-
-console.log(getRandomNumber());
-
-function getRandomSymbol() {
-    const symbols = "*&$#!@?/.,=+";
-    return symbols [Math.floor(Math.random() * symbols.length)]; 
-
-};
-
-console.log(getRandomSymbol());
-
-const randomFunctn = {
-    lower:getRandomLower,
-    upper:getRandomUpper,
-    number:getRandomNumber,
-    symbol:getRandomSymbol,
-
-};
-
-"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()[]:;\/"
+generateBtn.addEventListener ("click" , writePassword );
